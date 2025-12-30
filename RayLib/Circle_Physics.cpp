@@ -13,6 +13,12 @@ int main()
     SetTargetFPS(100);
     //SetTargetFPS(10);
 
+    // Music
+    InitAudioDevice();
+    Music mc = LoadMusicStream("Source Music");
+    PlayMusicStream(mc);
+
+
     // Center safhe
     float taghsim = screenWidth / 2.0f;
     float taghsim2 = screenHeight / 2.0f;
@@ -24,6 +30,21 @@ int main()
     int num = 0;
     while (!WindowShouldClose())
     {
+        UpdateMusicStream(mc);
+
+
+        // Stop music
+        if (IsKeyPressed(KEY_SPACE)) 
+        {
+            StopMusicStream(mc);
+        }
+
+        // Start music
+        if (IsKeyPressed(KEY_SPACE))
+        {
+            PlayMusicStream(mc);
+        }
+
 
         // Jahat ha
         if (IsKeyDown(KEY_RIGHT))
@@ -42,7 +63,7 @@ int main()
 
         //DrawCircle3D(circlePos,radius, circlePos,radius,RED);
         //DrawFPS(5, 5);
-        //DrawText("Coded By MamaD", 10, 50, 100, RED);
+        DrawText("Coded By MamaD", 10, 50, 100, RED);
         DrawText(TextFormat("FPS: %i", GetFPS()), 10, 10, 20, BLUE);
         DrawCircleV(circlePos, radius, PURPLE);
 
@@ -52,7 +73,7 @@ int main()
 
 
 
-
+        
 
         /*
             float x;     // Rectangle top-left corner position x
@@ -128,7 +149,7 @@ int main()
         //DrawCircleV(circlePos, radius, RED);
         EndDrawing();
     }
-
+    UnloadMusicStream(mc);
     CloseWindow();
 
     return 0;
