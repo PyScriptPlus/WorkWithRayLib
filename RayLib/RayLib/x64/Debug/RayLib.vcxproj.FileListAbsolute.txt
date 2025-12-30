@@ -1,0 +1,3 @@
+C:\Users\Mohamad\Desktop\WorkWithRayLib\RayLib\x64\Debug\raylib.dll
+C:\Users\Mohamad\Desktop\WorkWithRayLib\RayLib\x64\Debug\glfw3.dll
+C:\Users\Mohamad\Desktop\WorkWithRayLib\RayLib\RayLib\x64\Debug\RayLib.vcxproj.Up2Date
