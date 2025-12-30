@@ -137,7 +137,8 @@ int main()
             }
         }
 
-        std::cout << "Time: " << GetTime() << '\n';
+        //std::cout << "Time: " << GetTime() << '\n';
+        
         //circle
         //cirle
         //DrawCircle(circlePos.x, circlePos.y, radius, PURPLE);
