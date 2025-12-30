@@ -13,6 +13,9 @@ int main()
     SetTargetFPS(100);
     //SetTargetFPS(10);
 
+    
+    
+
     // Music
     InitAudioDevice();
     Music mc = LoadMusicStream("Source Music");
@@ -63,18 +66,21 @@ int main()
 
         //DrawCircle3D(circlePos,radius, circlePos,radius,RED);
         //DrawFPS(5, 5);
+        
+        // Made
         DrawText("Coded By MamaD", 10, 50, 100, RED);
-        DrawText(TextFormat("FPS: %i", GetFPS()), 10, 10, 20, BLUE);
+        
+        // Circle
         DrawCircleV(circlePos, radius, PURPLE);
-
         DrawCircle(GetMouseX(), GetMouseY(), radius, YELLOW);
 
 
+        // FPS and Frame Time
+        DrawText(TextFormat("Frame Time: %f", GetFrameTime()), 10, 35, 20, BLUE);
+        DrawText(TextFormat("FPS: %i", GetFPS()), 10, 10, 20, BLUE);
 
-
-
+        //std::cout <<  "frameee: " << GetFrameTime() << '\n';
         
-
         /*
             float x;     // Rectangle top-left corner position x
             float y;     // Rectangle top-left corner position y
@@ -149,6 +155,7 @@ int main()
         //DrawCircleV(circlePos, radius, RED);
         EndDrawing();
     }
+
     UnloadMusicStream(mc);
     CloseWindow();
 
