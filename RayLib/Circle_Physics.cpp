@@ -7,7 +7,16 @@ int main()
     // Andaze Safhe
     const int screenWidth = 1366;
     const int screenHeight = 768;
-    InitWindow(screenWidth, screenHeight, "Football");
+    InitWindow(screenWidth, screenHeight, NULL);
+
+    // Icon Window
+    Image img = LoadImage("gravity.png");
+    //img.height = 100;
+    //img.width = 100;
+    SetWindowIcon(img);
+
+
+    SetWindowTitle("Circle Physics");
 
     // FPS
     SetTargetFPS(100);
