@@ -15,16 +15,16 @@ int main()
     //img.width = 100;
     SetWindowIcon(img);
 
-
+    // Title Window
     SetWindowTitle("Circle Physics");
 
     // FPS
     SetTargetFPS(100);
     //SetTargetFPS(10);
 
+    // Keybind Exit to Game
+    SetExitKey(81);
     
-    
-
     // Music
     InitAudioDevice();
     Music mc = LoadMusicStream("Source Music");
@@ -75,9 +75,12 @@ int main()
 
         //DrawCircle3D(circlePos,radius, circlePos,radius,RED);
         //DrawFPS(5, 5);
+
+        // Help Exit to Game
+        DrawText("Press Q to exit the game.", 10, 700, 50, RED);
         
-        // Made
-        DrawText("Coded By MamaD", 10, 50, 100, RED);
+        // Made Program
+        DrawText("Coded By MamaD", 10, 50, 100, ORANGE);
         
         // Circle
         DrawCircleV(circlePos, radius, PURPLE);
