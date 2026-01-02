@@ -72,6 +72,10 @@ int main()
         BeginDrawing();
         ClearBackground(GREEN);
 
+        // Cursor is Hidden
+        HideCursor();
+
+        DrawPixel(101,300,BLUE);
 
         //DrawCircle3D(circlePos,radius, circlePos,radius,RED);
         //DrawFPS(5, 5);
@@ -148,9 +152,6 @@ int main()
 
             }
         }
-
-
-        
 
 
         //std::cout << "Time: " << GetTime() << '\n';
