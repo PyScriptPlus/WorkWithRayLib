@@ -35,9 +35,17 @@ int main()
     float taghsim = screenWidth / 2.0f;
     float taghsim2 = screenHeight / 2.0f;
 
+    // Vector Circle
     Vector2 circlePos = { taghsim, taghsim2 };
     float radius = 50.0f;
     float speed = 5.0f;
+
+    // Vector Rectangle
+    Vector2 RectanglePos =
+    {
+        taghsim,
+        taghsim2
+    };
 
     int num = 0;
     while (!WindowShouldClose())
@@ -90,7 +98,9 @@ int main()
         DrawCircleV(circlePos, radius, PURPLE);
         DrawCircle(GetMouseX(), GetMouseY(), radius, YELLOW);
 
-
+        // Rectangle
+        DrawRectangle(RectanglePos.x, RectanglePos.y, 100, 90, PINK);
+    
         // FPS and Frame Time
         DrawText(TextFormat("Frame Time: %f", GetFrameTime()), 10, 35, 20, BLUE);
         DrawText(TextFormat("FPS: %i", GetFPS()), 10, 10, 20, BLUE);
