@@ -50,6 +50,8 @@ int main()
     int num = 0;
     bool setRec = true;
     bool setCircle = false;
+    Color c;
+    c = YELLOW;
     while (!WindowShouldClose())
     {
         UpdateMusicStream(mc);
@@ -68,7 +70,7 @@ int main()
         }
 
 
-        #pragma region Select Character:
+    #pragma region Select Character:
         if (IsKeyPressed(KEY_O)) 
         {
             setRec = false;
@@ -127,9 +129,18 @@ int main()
         // Made Program
         DrawText("Coded By MamaD", 10, 50, 100, ORANGE);
         
-        // Circle
+        #pragma region Circle
         DrawCircleV(circlePos, radius, PURPLE);
-        DrawCircle(GetMouseX(), GetMouseY(), radius, YELLOW);
+        // Change Color
+        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
+            c = ORANGE;
+         
+        }
+        else if (IsMouseButtonPressed(MOUSE_BUTTON_RIGHT)) {
+            c = BLUE;
+        }
+        DrawCircle(GetMouseX(), GetMouseY(), radius, c);
+#pragma endregion
 
         // Rectangle
         DrawRectangle(RectanglePos.x, RectanglePos.y, 100, 90, PINK);
