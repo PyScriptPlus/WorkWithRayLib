@@ -48,6 +48,8 @@ int main()
     };
 
     int num = 0;
+    bool setRec = true;
+    bool setCircle = false;
     while (!WindowShouldClose())
     {
         UpdateMusicStream(mc);
@@ -66,15 +68,42 @@ int main()
         }
 
 
-        // Jahat ha
-        if (IsKeyDown(KEY_RIGHT))
-            circlePos.x += speed;
-        if (IsKeyDown(KEY_LEFT))
-            circlePos.x -= speed;
-        if (IsKeyDown(KEY_UP))
-            circlePos.y -= speed;
-        if (IsKeyDown(KEY_DOWN))
-            circlePos.y += speed;
+        #pragma region Select Character:
+        if (IsKeyPressed(KEY_O)) 
+        {
+            setRec = false;
+            setCircle = true;
+        }
+        else if (IsKeyPressed(KEY_P)) 
+        {
+            setRec = true;
+            setCircle = false;
+        }
+        // Rectangle Speed
+        if (setRec)
+        {
+            if (IsKeyDown(KEY_RIGHT))
+                RectanglePos.x += speed;
+            if (IsKeyDown(KEY_LEFT))
+                RectanglePos.x -= speed;
+            if (IsKeyDown(KEY_UP))
+                RectanglePos.y -= speed;
+            if (IsKeyDown(KEY_DOWN))
+                RectanglePos.y += speed;
+        }
+        // Circle Speed
+        if (setCircle) 
+        {
+            if (IsKeyDown(KEY_RIGHT))
+                circlePos.x += speed;
+            if (IsKeyDown(KEY_LEFT))
+                circlePos.x -= speed;
+            if (IsKeyDown(KEY_UP))
+                circlePos.y -= speed;
+            if (IsKeyDown(KEY_DOWN))
+                circlePos.y += speed;
+        }
+#pragma endregion
 
         // Safhe
         BeginDrawing();
@@ -91,6 +120,10 @@ int main()
         // Help Exit to Game
         DrawText("Press Q to exit the game.", 10, 700, 50, RED);
         
+        // Help Select Character
+        DrawText("Press O change to Circle | Press P change to Rectangle."
+            ,10,650,45, DARKBROWN);
+
         // Made Program
         DrawText("Coded By MamaD", 10, 50, 100, ORANGE);
         
