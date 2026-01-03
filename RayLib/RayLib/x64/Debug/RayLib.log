@@ -1,4 +1,6 @@
 ﻿  Circle_Physics.cpp
+C:\Users\Mohamad\Desktop\WorkWithRayLib\RayLib\Circle_Physics.cpp(146,51): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Mohamad\Desktop\WorkWithRayLib\RayLib\Circle_Physics.cpp(146,35): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   RayLib.vcxproj -> C:\Users\Mohamad\Desktop\WorkWithRayLib\RayLib\x64\Debug\RayLib.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.
